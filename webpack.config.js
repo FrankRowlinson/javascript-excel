@@ -8,7 +8,7 @@ module.exports = (env, argv) => {
   const isProd = argv.mode === 'production'
   const isDev = !isProd
   const filename = (ext) =>
-    isProd ? `[name].[contenthash].bundle.${ext}` : `[name].bundle.${ext}`
+  isProd ? `[name].[contenthash].bundle.${ext}` : `[name].bundle.${ext}`
 
   const plugins = () => {
     const base = [
@@ -40,7 +40,7 @@ module.exports = (env, argv) => {
       extensions: ['.js'],
       alias: {
         '@': path.resolve(__dirname, 'src'),
-        core: path.resolve(__dirname, 'src', 'core'),
+        '@core': path.resolve(__dirname, 'src', 'core'),
       },
     },
     plugins: plugins(),
